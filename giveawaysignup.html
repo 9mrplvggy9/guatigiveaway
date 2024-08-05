@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <div class="w3-container w3-teal w3-center">
+        <h1>Inscrição</h1>
+    </div>
+
+    <form id="signupForm" class="w3-container w3-card-4 w3-light-grey w3-margin w3-padding-16">
+        <p>
+            <label for="name" class="w3-text-teal"><b>Nome</b></label>
+            <input class="w3-input w3-border" type="text" id="name" name="name" required>
+        </p>
+        <p>
+            <label for="location" class="w3-text-teal"><b>Morada</b></label>
+            <input class="w3-input w3-border" type="text" id="location" name="location" required>
+        </p>
+        <p>
+            <label for="email" class="w3-text-teal"><b>Email</b></label>
+            <input class="w3-input w3-border" type="email" id="email" name="email" required>
+        </p>
+        <p>
+            <label for="phone" class="w3-text-teal"><b>Número de telefone (Opcional)</b></label>
+            <input class="w3-input w3-border" type="tel" id="phone" name="phone">
+        </p>
+        <p>
+            <button class="w3-btn w3-teal w3-round" type="submit">Enviar e Proceder ao Pagamento</button>
+        </p>
+    </form>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            var name = document.getElementById('name').value;
+            var location = document.getElementById('location').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            
+            // You can send this data to your server here if needed
+            
+            // Redirect to Stripe payment link
+            window.location.href = 'https://buy.stripe.com/00g00x9Woh2x0XCfYY';
+        });
+    </script>
+</body>
+</html>
